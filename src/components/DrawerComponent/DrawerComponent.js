@@ -39,6 +39,9 @@ function ResponsiveDrawer(props) {
   const DrawerComponent = (
     <div style={{ background: "#202020", minHeight: "100vh" }}>
       <Toolbar />
+      <Button fontWeight="bold" sx={{ color: "white" }}>
+        Shahida Binta Mahtab
+      </Button>
       <List sx={{ background: "#202020" }}>
         {navigation.map((item) => (
           <>

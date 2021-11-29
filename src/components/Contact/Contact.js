@@ -35,7 +35,7 @@ const Contact = () => {
         <Grid item xs={12} md={6}>
           <Typography
             variant="h4"
-            fontWeight="bold"
+            fontWeight="400"
             color="white"
             textAlign="left"
           >

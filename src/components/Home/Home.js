@@ -38,6 +38,13 @@ const Home = () => {
       >
         Front End Developer / Mern Stack Developer
       </Typography>
+      <Typography color="white" paragraph textAlign="left">
+        -- I'm a passionate developer, I have experience in HTML, CSS, and
+        JavaScript. Building easy-to-use, user-friendly websites, and
+        applications is truly a passion of mine . In addition to my knowledge
+        base, I actively seek out new technologies and stay up to date on
+        industry trends and advancements.
+      </Typography>
     </div>
   );
 };
