@@ -1,19 +1,13 @@
 import { Button, Typography } from "@mui/material";
 import React from "react";
-import FileDownloadIcon from "@mui/icons-material/FileDownload";
+
 import Grid from "@mui/material/Grid";
-import resume from "../../../src/Resume/ShahidaMahtab(Resume) (1).pdf";
+
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { Link } from "react-router-dom";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
 const About = () => {
-  const onDownload = () => {
-    const link = document.createElement("a");
-    link.download = `resume.pdf`;
-    link.href = resume;
-    link.click();
-  };
   return (
     <div>
       <Typography variant="h2" fontWeight="bold" color="white" sx={{ mb: 5 }}>
@@ -21,10 +15,10 @@ const About = () => {
       </Typography>
 
       <Typography variant="h4" color="white" textAlign="left" sx={{ mb: 2 }}>
-        Personal Infos
+        Personal Info
       </Typography>
       <Grid container spacing={2}>
-        <Grid item xs={6} md={3}>
+        <Grid item xs={12} md={3}>
           <Typography
             variant="subtitle1"
             color="white"
@@ -57,17 +51,8 @@ const About = () => {
           >
             Skype: Shahida Mahtab
           </Typography>
-          <Button
-            onClick={onDownload}
-            variant="contained"
-            color="secondary"
-            startIcon={<FileDownloadIcon />}
-            sx={{ display: "flex" }}
-          >
-            Resume
-          </Button>
         </Grid>
-        <Grid item xs={6} md={3}>
+        <Grid item xs={12} md={3}>
           <Typography
             variant="subtitle1"
             color="white"
@@ -91,14 +76,6 @@ const About = () => {
             sx={{ mb: 2 }}
           >
             Address: Mirabajar Sylhet
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            color="white"
-            textAlign="left"
-            sx={{ mb: 2 }}
-          >
-            Email:shahidamahtab2@gmail.com
           </Typography>
           <div className="flex">
             <Link
@@ -128,7 +105,15 @@ const About = () => {
           </div>
         </Grid>
 
-        <Grid item xs={12} md={6}></Grid>
+        <Grid item xs={12} md={12}>
+          <Typography color="white" paragraph textAlign="left">
+            I'm a passionate developer, I have experience in HTML, CSS, and
+            JavaScript. Building easy-to-use, user-friendly websites, and
+            applications is truly a passion of mine . In addition to my
+            knowledge base, I actively seek out new technologies and stay up to
+            date on industry trends and advancements.
+          </Typography>
+        </Grid>
       </Grid>
     </div>
   );

@@ -22,11 +22,15 @@ import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
 import EngineeringIcon from "@mui/icons-material/Engineering";
+import FolderRoundedIcon from "@mui/icons-material/FolderRounded";
+import CancelPresentationRoundedIcon from "@mui/icons-material/CancelPresentationRounded";
+import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
 const drawerWidth = 240;
 const navigation = [
   { name: "Home", to: "/", icons: <HomeRoundedIcon /> },
   { name: "About", to: "/about", icons: <PersonRoundedIcon /> },
-  { name: "Skills", to: "/skills", icons: <EngineeringIcon /> },
+  { name: "Projects", to: "/projects", icons: <FolderRoundedIcon /> },
+  { name: "Blog", to: "/blog", icons: <LibraryBooksIcon /> },
   { name: "Contact", to: "/contact", icons: <EmailRoundedIcon /> },
 ];
 function ResponsiveDrawer(props) {
@@ -39,28 +43,38 @@ function ResponsiveDrawer(props) {
   const DrawerComponent = (
     <div style={{ background: "#202020", minHeight: "100vh" }}>
       <Toolbar />
-      <Button fontWeight="bold" sx={{ color: "white" }}>
+
+      <Box className="flex place-content-end mr-5">
+        <IconButton
+          color="secondary"
+          aria-label="open drawer"
+          onClick={handleDrawerToggle}
+          sx={{ display: { sm: "none", mb: 3 } }}
+        >
+          <CancelPresentationRoundedIcon />
+        </IconButton>
+      </Box>
+      <Button fontWeight="bold" sx={{ color: "white", display: "block" }}>
         Shahida Binta Mahtab
       </Button>
       <List sx={{ background: "#202020" }}>
-        {navigation.map((item) => (
-          <>
-            <ListItem>
-              <ListItemText>
-                <Link
-                  to={item.to}
-                  className="text-white font-bold  hover:text-purple-800"
-                >
-                  <Button color="inherit">
-                    <span className="mr-4"> {item.icons}</span>
-                    {item.name}
-                  </Button>
-                </Link>
-              </ListItemText>
-            </ListItem>
-            <Divider />
-          </>
-        ))}
+        <ListItem>
+          <ListItemText>
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                to={item.to}
+                className="block text-white font-bold  hover:text-purple-800"
+              >
+                <Button color="inherit">
+                  <span className="mr-4"> {item.icons}</span>
+                  {item.name}
+                </Button>
+              </Link>
+            ))}
+          </ListItemText>
+        </ListItem>
+        <Divider />
       </List>
     </div>
   );
@@ -69,7 +83,7 @@ function ResponsiveDrawer(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex", background: "#202020" }}>
       <AppBar
         sx={{
           width: {
